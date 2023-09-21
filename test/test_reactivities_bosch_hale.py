@@ -1,4 +1,5 @@
 import pytest
+from fusion_toolbox.reaction_rate.bosch_hale import BoschHaleReactivity
 
 @pytest.mark.parametrize(
     "test, expected, precision",
@@ -23,8 +24,7 @@ def test_DTn_reactivity(test, expected, precision):
         Precision for the comparision between the Bosch-Hale parameterized value
         and the tabulated value
     """
-    import fusion_toolbox.reaction_rate.bosch_hale as bh
-    DTn_r= bh.BoschHaleReactivity("DTn")
+    DTn_r = BoschHaleReactivity("DTn")
     assert DTn_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
 
 @pytest.mark.parametrize(
@@ -50,8 +50,7 @@ def test_DDn_reactivity(test, expected, precision):
         Precision for the comparision between the Bosch-Hale parameterized value
         and the tabulated value
     """
-    import fusion_toolbox.reaction_rate.bosch_hale as bh
-    DDn_r= bh.BoschHaleReactivity("DDn")
+    DDn_r = BoschHaleReactivity("DDn")
     assert DDn_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
 
 @pytest.mark.parametrize(
@@ -77,8 +76,7 @@ def test_DDp_reactivity(test, expected, precision):
         Precision for the comparision between the Bosch-Hale parameterized value
         and the tabulated value
     """
-    import fusion_toolbox.reaction_rate.bosch_hale as bh
-    DDp_r= bh.BoschHaleReactivity("DDp")
+    DDp_r = BoschHaleReactivity("DDp")
     assert DDp_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
 
 @pytest.mark.parametrize(
@@ -104,6 +102,5 @@ def test_D3Hep_reactivity(test, expected, precision):
         Precision for the comparision between the Bosch-Hale parameterized value
         and the tabulated value
     """
-    import fusion_toolbox.reaction_rate.bosch_hale as bh
-    D3Hep_r= bh.BoschHaleReactivity("D3Hep")
+    D3Hep_r = BoschHaleReactivity("D3Hep")
     assert D3Hep_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
