@@ -104,3 +104,7 @@ def test_D3Hep_reactivity(test, expected, precision):
     """
     D3Hep_r = BoschHaleReactivity("D3Hep")
     assert D3Hep_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
+
+def test_wrong_reaction_exception():
+    with pytest.raises(ValueError):
+        DTgamma_r = BoschHaleReactivity("DTgamma")
