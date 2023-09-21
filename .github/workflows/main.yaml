@@ -36,7 +36,7 @@ jobs:
 
     - name: Test with PyTest
       run: |
-        python -m pytest --cov=fusion_toolbox tests/
+        python -m pytest tests/
 
     - name: Check style with Pylint
       run: |
