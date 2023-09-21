@@ -1,5 +1,5 @@
 import pytest
-from fusion_toolbox.reaction_rate.bosch_hale import BoschHaleReactivity
+from fusion_toolbox.reactivity import BoschHaleReactivity
 
 @pytest.mark.parametrize(
     "test, expected, precision",
