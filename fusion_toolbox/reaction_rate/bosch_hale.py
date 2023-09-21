@@ -11,16 +11,22 @@ class BoschHaleReactivity:
     """
     known_reactions = ["DDn", "DDp", "DTn", "D3Hep"]
 
+    ## The values for C in the paper are the fit variables for the theta parameter shown in equation 13
+    ## The values are from table VII.
     _DDn_Cs = [5.43360e-12, 5.85778e-3, 7.68222e-3, 0.0, -2.96400e-6, 0.0, 0.0]
     _DDp_Cs = [5.65718e-12, 3.41267e-3, 1.99167e-3, 0.0, 1.05060e-5, 0.0, 0.0]
     _DTn_Cs = [1.1302e-9, 1.51361e-2, 7.51886e-2, 4.60643e-3, 1.35e-2, -1.0675e-4, 1.366e-5]
     _D3Hep_Cs = [5.51036e-10, 6.41918e-3, -2.02896e-3, -1.91080e-5, 1.35776e-4, 0.0, 0.0]
 
+    ## Bg is the square root of the Gammow peak. It has units of sqrt(keV). See equations 14.
+    ## The values are from table VII.
     _DDn_Bg = 31.3970
     _DDp_Bg = 31.3970
     _DTn_Bg = 34.3827
     _D3Hep_Bg = 68.7508
 
+    ## The rest mass for the different reactions in units of keV. See equaiton 12.
+    ## The values are from table VII.
     _DDn_mr = 937814
     _DDp_mr = 937814
     _DTn_mr = 1124656
