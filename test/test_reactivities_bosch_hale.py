@@ -1,14 +1,13 @@
-import numpy.testing as npt
 import pytest
 
 @pytest.mark.parametrize(
     "test, expected, precision",
     [
-        (1.0, 6.857e-21, 21),
-        (2.0, 2.977e-19, 19),
-        (5.0, 1.366e-17, 18),
-        (10.0, 1.136e-16, 17),
-        (20.0, 4.330e-16, 16),
+        (1.0, 6.857e-21, 1e-21),
+        (2.0, 2.977e-19, 1e-19),
+        (5.0, 1.366e-17, 1e-18),
+        (10.0, 1.136e-16, 1e-17),
+        (20.0, 4.330e-16, 1e-16),
     ])
 def test_DTn_reactivity(test, expected, precision):
     """Test of the DTn fusion reactivity
@@ -26,16 +25,16 @@ def test_DTn_reactivity(test, expected, precision):
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     DTn_r= bh.BoschHaleReactivity("DTn")
-    npt.assert_almost_equal(DTn_r.get_reactivity(test), expected, decimal=precision) 
+    assert DTn_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
 
 @pytest.mark.parametrize(
     "test, expected, precision",
     [
-        (1.0, 9.933e-23, 24),
-        (2.0, 3.110e-21, 22),
-        (5.0, 9.128e-20, 21),
-        (10.0, 6.023e-19, 20),
-        (20.0, 2.603e-18, 19),
+        (1.0, 9.933e-23, 1e-24),
+        (2.0, 3.110e-21, 1e-22),
+        (5.0, 9.128e-20, 1e-21),
+        (10.0, 6.023e-19, 1e-20),
+        (20.0, 2.603e-18, 1e-19),
     ])
 def test_DDn_reactivity(test, expected, precision):
     """Test of the DDn fusion reactivity
@@ -53,16 +52,16 @@ def test_DDn_reactivity(test, expected, precision):
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     DDn_r= bh.BoschHaleReactivity("DDn")
-    npt.assert_almost_equal(DDn_r.get_reactivity(test), expected, decimal=precision) 
+    assert DDn_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
 
 @pytest.mark.parametrize(
     "test, expected, precision",
     [
-        (1.0, 1.017e-22, 23),
-        (2.0, 3.150e-21, 22),
-        (5.0, 9.024e-20, 21),
-        (10.0, 5.781e-19, 20),
-        (20.0, 2.399e-18, 20),
+        (1.0, 1.017e-22, 1e-23),
+        (2.0, 3.150e-21, 1e-22),
+        (5.0, 9.024e-20, 1e-21),
+        (10.0, 5.781e-19, 1e-20),
+        (20.0, 2.399e-18, 1e-20),
     ])
 def test_DDp_reactivity(test, expected, precision):
     """Test of the DDp fusion reactivity
@@ -80,16 +79,16 @@ def test_DDp_reactivity(test, expected, precision):
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     DDp_r= bh.BoschHaleReactivity("DDp")
-    npt.assert_almost_equal(DDp_r.get_reactivity(test), expected, decimal=precision) 
+    assert DDp_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
 
 @pytest.mark.parametrize(
     "test, expected, precision",
     [
-        (1.0, 3.057e-26, 27),
-        (2.0, 1.399e-23, 24),
-        (5.0, 6.377e-21, 22),
-        (10.0, 2.126e-19, 20),
-        (20.0, 3.482e-18, 22),
+        (1.0, 3.057e-26, 1e-27),
+        (2.0, 1.399e-23, 1e-24),
+        (5.0, 6.377e-21, 1e-22),
+        (10.0, 2.126e-19, 1e-20),
+        (20.0, 3.482e-18, 1e-21),
     ])
 def test_D3Hep_reactivity(test, expected, precision):
     """Test of the D3Hep fusion reactivity
@@ -107,4 +106,4 @@ def test_D3Hep_reactivity(test, expected, precision):
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     D3Hep_r= bh.BoschHaleReactivity("D3Hep")
-    npt.assert_almost_equal(D3Hep_r.get_reactivity(test), expected, decimal=precision) 
+    assert D3Hep_r.get_reactivity(test) == pytest.approx(expected, abs=precision)
