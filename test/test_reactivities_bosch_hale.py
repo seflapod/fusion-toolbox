@@ -13,6 +13,19 @@ import pytest
         (20.0, 4.330e-16, 16),
     ])
 def test_DTn_reactivity(test, expected, precision):
+    """Test of the DTn fusion reactivity
+    Tested according to table VIII in H.-S. Bosch and G.M. Hale 1992 Nucl. Fusion 32 611
+
+    Parameters
+    ---------
+    test : float
+        Input ion temperature for the test
+    expected : float
+        Expected answer from table VIII in Bosch-Hale '92
+    precision : int 
+        Precision for the comparision between the Bosch-Hale parameterized value
+        and the tabulated value
+    """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     DTn_r= bh.Bosch_Hale_reactivity("DTn")
     npt.assert_almost_equal(DTn_r.get_reactivity(test), expected, decimal=precision) 
@@ -29,6 +42,19 @@ def test_DTn_reactivity(test, expected, precision):
         (20.0, 2.603e-18, 19),
     ])
 def test_DDn_reactivity(test, expected, precision):
+    """Test of the DDn fusion reactivity
+    Tested according to table VIII in H.-S. Bosch and G.M. Hale 1992 Nucl. Fusion 32 611
+
+    Parameters
+    ---------
+    test : float
+        Input ion temperature for the test
+    expected : float
+        Expected answer from table VIII in Bosch-Hale '92
+    precision : int 
+        Precision for the comparision between the Bosch-Hale parameterized value
+        and the tabulated value
+    """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     DDn_r= bh.Bosch_Hale_reactivity("DDn")
     npt.assert_almost_equal(DDn_r.get_reactivity(test), expected, decimal=precision) 
@@ -45,6 +71,19 @@ def test_DDn_reactivity(test, expected, precision):
         (20.0, 2.399e-18, 20),
     ])
 def test_DDp_reactivity(test, expected, precision):
+    """Test of the DDp fusion reactivity
+    Tested according to table VIII in H.-S. Bosch and G.M. Hale 1992 Nucl. Fusion 32 611
+
+    Parameters
+    ---------
+    test : float
+        Input ion temperature for the test
+    expected : float
+        Expected answer from table VIII in Bosch-Hale '92
+    precision : int 
+        Precision for the comparision between the Bosch-Hale parameterized value
+        and the tabulated value
+    """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     DDp_r= bh.Bosch_Hale_reactivity("DDp")
     npt.assert_almost_equal(DDp_r.get_reactivity(test), expected, decimal=precision) 
@@ -61,6 +100,19 @@ def test_DDp_reactivity(test, expected, precision):
         (20.0, 3.482e-18, 22),
     ])
 def test_D3Hep_reactivity(test, expected, precision):
+    """Test of the D3Hep fusion reactivity
+    Tested according to table VIII in H.-S. Bosch and G.M. Hale 1992 Nucl. Fusion 32 611
+
+    Parameters
+    ---------
+    test : float
+        Input ion temperature for the test
+    expected : float
+        Expected answer from table VIII in Bosch-Hale '92
+    precision : int 
+        Precision for the comparision between the Bosch-Hale parameterized value
+        and the tabulated value
+    """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
     D3Hep_r= bh.Bosch_Hale_reactivity("D3Hep")
     npt.assert_almost_equal(D3Hep_r.get_reactivity(test), expected, decimal=precision) 
