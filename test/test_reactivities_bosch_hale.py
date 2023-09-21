@@ -57,8 +57,6 @@ def test_DDn_reactivity(test, expected, precision):
     DDn_r= bh.BoschHaleReactivity("DDn")
     npt.assert_almost_equal(DDn_r.get_reactivity(test), expected, decimal=precision) 
 
-## Testing DDp fusion reaction
-## Tested according to table VIII in H.-S. Bosch and G.M. Hale 1992 Nucl. Fusion 32 611
 @pytest.mark.parametrize(
     "test, expected, precision",
     [
