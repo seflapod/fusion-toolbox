@@ -27,7 +27,7 @@ def test_DTn_reactivity(test, expected, precision):
         and the tabulated value
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
-    DTn_r= bh.Bosch_Hale_reactivity("DTn")
+    DTn_r= bh.BoschHaleReactivity("DTn")
     npt.assert_almost_equal(DTn_r.get_reactivity(test), expected, decimal=precision) 
 
 ## Testing DDn fusion reaction
@@ -56,7 +56,7 @@ def test_DDn_reactivity(test, expected, precision):
         and the tabulated value
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
-    DDn_r= bh.Bosch_Hale_reactivity("DDn")
+    DDn_r= bh.BoschHaleReactivity("DDn")
     npt.assert_almost_equal(DDn_r.get_reactivity(test), expected, decimal=precision) 
 
 ## Testing DDp fusion reaction
@@ -85,7 +85,7 @@ def test_DDp_reactivity(test, expected, precision):
         and the tabulated value
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
-    DDp_r= bh.Bosch_Hale_reactivity("DDp")
+    DDp_r= bh.BoschHaleReactivity("DDp")
     npt.assert_almost_equal(DDp_r.get_reactivity(test), expected, decimal=precision) 
 
 ## Testing D3Hep fusion reaction
@@ -114,5 +114,5 @@ def test_D3Hep_reactivity(test, expected, precision):
         and the tabulated value
     """
     import fusion_toolbox.reaction_rate.bosch_hale as bh
-    D3Hep_r= bh.Bosch_Hale_reactivity("D3Hep")
+    D3Hep_r= bh.BoschHaleReactivity("D3Hep")
     npt.assert_almost_equal(D3Hep_r.get_reactivity(test), expected, decimal=precision) 
