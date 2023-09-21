@@ -9,6 +9,13 @@ class BoschHaleReactivity:
     reaction : string
         String name for the fusion reaction
 
+    Attributes
+    ----------
+    reaction : string
+        String name for the fusion reaction
+    known_reactions : list of strings
+        List of valid nuclear reactions for Bosch Hale
+
     """
     known_reactions = ["DDn", "DDp", "DTn", "D3Hep"]
 
